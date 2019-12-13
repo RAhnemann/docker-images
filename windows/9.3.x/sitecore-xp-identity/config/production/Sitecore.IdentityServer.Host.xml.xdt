@@ -14,7 +14,7 @@
       <Clients>
         <DefaultClient>
           <AllowedCorsOrigins>
-            <AllowedCorsOriginsGroup1>http://cm|http://cd</AllowedCorsOriginsGroup1>
+            <AllowedCorsOriginsGroup1>http://cm|http://cd|http://localhost:44008|http://identity:44008</AllowedCorsOriginsGroup1>
           </AllowedCorsOrigins>
         </DefaultClient>
         <PasswordClient>
