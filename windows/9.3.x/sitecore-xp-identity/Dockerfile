@@ -80,7 +80,6 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Import-Module WebAdministration; `
     $identityCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\identity.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
-    New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '44008' -Protocol "http" -HostHeader '*'; `
     $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
     $binding.AddSslCertificate($identityCert.GetCertHashString(), 'my'); `
     # configure SSL flags
